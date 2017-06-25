@@ -429,12 +429,24 @@ int addDHead(_DLINKED_LIST_ *dlist, void *data) {
         dnode->next = NULL;
     } else {
         dnode->next = dlist->head;
+        dlist->head->prev = dnode;
     }
     dlist->head = dnode;
     return 1;
 }
 
 int addDTail(_DLINKED_LIST_ *dlist, void *data) {
+    _DNODE_ *dnode = (_DNODE_*)malloc(sizeof(_DNODE_));
+    if(dnode==NULL) return 0;
+    dnode->data = data;
+    dnode->next = NULL;
+    dnode->prev = dlist->tail;
+    if(dlist->head == NULL){
+        dlist->head = dnode;
+    }
+    dlist->tail->next = dnode;
+    dlist->tail = dnode;
+    return 1;
 }
 
 void removeDNode(_DLINKED_LIST_ *dlist, _DNODE_ *dnode) {
