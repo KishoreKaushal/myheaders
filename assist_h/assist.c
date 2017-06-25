@@ -35,33 +35,6 @@ void warning(const char *text) {
     printf("%s\n", text );
     resetColor();
 }
-/*
-void getRawVal(const char *text) {
------Need to complete-----
-}
-*/
-
-/*
-+------------------------------------------+
-x---------------------------+          X                               |
-+  X     X                            XXXX                             +----+
-|  X    XX       XXX                 X   XX             XXXXXXXXX    X      |
-|  X    X      XXX XXXXX            XX                  X        XX  XX     |
-|  X   XX     XX     X XX           XX          X    X  X XXXXX   X  XX     |
-|  X  XX      X  XXXXX   X  X        XXXXXXXX   X    X XX X   X   X  XX     |
-|  X XXX      X  X   X   X  X    X          XX  X    X X  XX  X   X  XX     |
-|  XXX XX     X  X   X   X  X    XX          X  XXXXXX X   XXXXXXXX  XX     |
-|  XX   XX    X  XXXXXX  X  X    XX          X  X    X XX            XX     |
-|  X     XX   XXX     XXX   X    XX   XXXXXXXX  X    X  XXXXXXXX     XX     |
-|  X      X     XXXXXXX     X    XX      XXX    X    X               XXXX   |
-|  X      XX                XX   XX             X    XX             XX  XX  |
-|  X       X                 XXXXXX             X     X                  XX |
-|  X       X                      XXXX                                      |
-|          XX     +-------------------------------------------------->      |
-|           XXXXX                                                           |
-+---------------------------------------->  +----> +------------------------>
-
-*/
 
 
 /* OTHER FUNCTIONS */
@@ -473,15 +446,19 @@ _DNODE_ *getDNode(const _DLINKED_LIST_ *dlist, COMPARE compare, void *data) {
         dnode = dnode->next;
     }
     return NULL;
-
 }
 
 void displayDLinkedList(const _DLINKED_LIST_ *dlist, DISPLAY display) {
-
+    //printf("Doubly Linked List\n");
+    _DNODE_ *current = dlist->head;
+    while(current != NULL){
+        display(current->data);
+        current = current->next;
+    }
 }
 
 void DlistEmpty(const _DLINKED_LIST_ * dlist) {
-
+    return (dlist->head == NULL);
 }
 
 void freeDList(_DLINKED_LIST_ *dlist) {
