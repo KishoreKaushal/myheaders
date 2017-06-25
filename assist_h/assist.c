@@ -399,3 +399,31 @@ void destroyQueue(_QUEUE_ *queue) {
     }
     //printf("%s\n", "Destroyed...");
 }
+
+/* ---------------- DOUBLY LINKED LIST ------------------ */
+
+
+void initializeDList(_DLINKED_LIST_ *dlist) {
+    dlist->current = NULL;
+    dlist->head = NULL;
+    dlist->current = NULL;
+}
+
+int addDHead(_DLINKED_LIST_*, void*) {
+
+}
+
+int addDTail(_DLINKED_LIST_*, void*) {
+}
+
+void removeDNode(_DLINKED_LIST_*, _DNODE_*) {
+
+}
+
+_DNODE_ *getDNode(_DLINKED_LIST_*, COMPARE , void*) {
+
+}
+
+void displayDLinkedList(_DLINKED_LIST_*, DISPLAY) {
+
+}
