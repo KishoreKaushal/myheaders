@@ -450,7 +450,18 @@ int addDTail(_DLINKED_LIST_ *dlist, void *data) {
 }
 
 void removeDNode(_DLINKED_LIST_ *dlist, _DNODE_ *dnode) {
-
+    if (dnode == dlist->head) {
+        if (dlist->head->next == NULL) {
+            dlist->head = dlist->tail = NULL;
+        } else {
+            dlist->head->next->prev = NULL;
+            dlist->head = dlist->head->next;
+        }
+    } else {
+        dnode->prev->next = dnode->next;
+        dnode->next->prev = dnode->prev;
+    }
+    free(dnode);
 }
 
 _DNODE_ *getDNode(const _DLINKED_LIST_ *dlist, COMPARE compare, void *data) {
