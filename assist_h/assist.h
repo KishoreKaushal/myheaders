@@ -112,8 +112,9 @@ void initializeList(_LINKED_LIST_*);                /* Initializes the linked li
 int addHead(_LINKED_LIST_*, void*);                 /* Adds data to the linked lists's head */
 int addTail(_LINKED_LIST_*, void*);                 /* Adds data to the linked list's tail */
 void removeNode(_LINKED_LIST_*, _NODE_*);               /* Removes a node from the linked list */
-_NODE_ *getNode(_LINKED_LIST_*, COMPARE , void*);   /* Returns a pointer to the node containing a specific data item */
-void displayLinkedList(_LINKED_LIST_*, DISPLAY);    /* Displays the linked list */
+_NODE_ *getNode(const _LINKED_LIST_*, COMPARE , void*);   /* Returns a pointer to the node containing a specific data item */
+void displayLinkedList(const _LINKED_LIST_*, DISPLAY);    /* Displays the linked list */
+int listEmpty(const _LINKED_LIST_*); /*Returns 1 if list is empty */
 
 /* --------------------- STACK --------------------- */
 
@@ -156,9 +157,9 @@ void initializeDList(_DLINKED_LIST_*);                /* Initializes the doubly 
 int addDHead(_DLINKED_LIST_*, void*);                 /* Adds data to the doubly linked lists's head */
 int addDTail(_DLINKED_LIST_*, void*);                 /* Adds data to the doubly linked list's tail */
 void removeDNode(_DLINKED_LIST_*, _DNODE_*);               /* Removes a node from the doubly linked list */
-_DNODE_ *getDNode(_DLINKED_LIST_*, COMPARE , void*);   /* Returns a pointer to the node containing a specific data item */
-void displayDLinkedList(_DLINKED_LIST_*, DISPLAY);    /* Displays the doubly linked list */
-
+_DNODE_ *getDNode(const _DLINKED_LIST_*, COMPARE , void*);   /* Returns a pointer to the node containing a specific data item */
+void displayDLinkedList(const _DLINKED_LIST_*, DISPLAY);    /* Displays the doubly linked list */
+int DlistEmpty(const _DLINKED_LIST_*);
 
 
 

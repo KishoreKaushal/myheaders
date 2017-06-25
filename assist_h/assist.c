@@ -222,7 +222,7 @@ int addTail(_LINKED_LIST_* list, void* data){
 }
 
 
-_NODE_ *getNode(_LINKED_LIST_ *list, COMPARE compare, void *data){
+_NODE_ *getNode(const _LINKED_LIST_ *list, COMPARE compare, void *data){
     _NODE_ *node = list->head;
     while(node != NULL ){
         if(compare(node->data, data) == 0){
@@ -233,7 +233,7 @@ _NODE_ *getNode(_LINKED_LIST_ *list, COMPARE compare, void *data){
     return NULL;
 }
 
-void displayLinkedList(_LINKED_LIST_ *list , DISPLAY display){
+void displayLinkedList(const _LINKED_LIST_ *list , DISPLAY display){
     //printf("Linked List\n");
     _NODE_ *current = list->head;
     while(current != NULL){
@@ -260,6 +260,10 @@ void removeNode(_LINKED_LIST_ *list, _NODE_ *node) {
         }
     }
     free(node);
+}
+
+int listEmpty(const _LINKED_LIST_ *list) {
+    return (list->head == NULL);
 }
 
 /* --------------------- STACK --------------------- */
@@ -404,26 +408,30 @@ void destroyQueue(_QUEUE_ *queue) {
 
 
 void initializeDList(_DLINKED_LIST_ *dlist) {
-    dlist->current = NULL;
+    dlist->tail = NULL;
     dlist->head = NULL;
     dlist->current = NULL;
 }
 
-int addDHead(_DLINKED_LIST_*, void*) {
+int addDHead(_DLINKED_LIST_ *dlist, void *data) {
 
 }
 
-int addDTail(_DLINKED_LIST_*, void*) {
+int addDTail(_DLINKED_LIST_ *dlist, void *data) {
 }
 
-void removeDNode(_DLINKED_LIST_*, _DNODE_*) {
-
-}
-
-_DNODE_ *getDNode(_DLINKED_LIST_*, COMPARE , void*) {
+void removeDNode(_DLINKED_LIST_ *dlist, _DNODE_ *dnode) {
 
 }
 
-void displayDLinkedList(_DLINKED_LIST_*, DISPLAY) {
+_DNODE_ *getDNode(const _DLINKED_LIST_ *dlist, COMPARE compare, void *data) {
+
+}
+
+void displayDLinkedList(const _DLINKED_LIST_ *dlist, DISPLAY display) {
+
+}
+
+void DlistEmpty(const _DLINKED_LIST_ * dlist) {
 
 }
