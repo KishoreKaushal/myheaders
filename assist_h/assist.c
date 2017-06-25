@@ -465,6 +465,14 @@ void removeDNode(_DLINKED_LIST_ *dlist, _DNODE_ *dnode) {
 }
 
 _DNODE_ *getDNode(const _DLINKED_LIST_ *dlist, COMPARE compare, void *data) {
+    _DNODE_ *dnode = dlist->head;
+    while(dnode != NULL ){
+        if(compare(dnode->data, data) == 0){
+            return dnode;
+        }
+        dnode = dnode->next;
+    }
+    return NULL;
 
 }
 
