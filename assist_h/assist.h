@@ -115,6 +115,8 @@ void removeNode(_LINKED_LIST_*, _NODE_*);               /* Removes a node from t
 _NODE_ *getNode(const _LINKED_LIST_*, COMPARE , void*);   /* Returns a pointer to the node containing a specific data item */
 void displayLinkedList(const _LINKED_LIST_*, DISPLAY);    /* Displays the linked list */
 int listEmpty(const _LINKED_LIST_*); /*Returns 1 if list is empty */
+void freeList(_LINKED_LIST_*); /* Free the allocated linked list from the memory.*/
+
 
 /* --------------------- STACK --------------------- */
 
@@ -160,7 +162,7 @@ void removeDNode(_DLINKED_LIST_*, _DNODE_*);               /* Removes a node fro
 _DNODE_ *getDNode(const _DLINKED_LIST_*, COMPARE , void*);   /* Returns a pointer to the node containing a specific data item */
 void displayDLinkedList(const _DLINKED_LIST_*, DISPLAY);    /* Displays the doubly linked list */
 int DlistEmpty(const _DLINKED_LIST_*);
-
+void freeDList(_DLINKED_LIST_ *); /*Free the allocated doubly linked list from the memory*/
 
 
 /* ---------------- ----------------------- */

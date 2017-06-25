@@ -266,6 +266,12 @@ int listEmpty(const _LINKED_LIST_ *list) {
     return (list->head == NULL);
 }
 
+void freeList(_LINKED_LIST_ *list) {
+    while(!listEmpty(list)){
+        removeNode(list, list->head);
+    }
+}
+
 /* --------------------- STACK --------------------- */
 
 int stackEmpty(const _STACK_ *stack) {
@@ -434,4 +440,10 @@ void displayDLinkedList(const _DLINKED_LIST_ *dlist, DISPLAY display) {
 
 void DlistEmpty(const _DLINKED_LIST_ * dlist) {
 
+}
+
+void freeDList(_DLINKED_LIST_ *dlist) {
+    while (!DlistEmpty(dlist)) {
+        removeDNode(dlist,dlist->head);
+    }
 }
