@@ -420,7 +420,18 @@ void initializeDList(_DLINKED_LIST_ *dlist) {
 }
 
 int addDHead(_DLINKED_LIST_ *dlist, void *data) {
-
+    _DNODE_ *dnode = (_DNODE_*)malloc(sizeof(_DNODE_));
+    if(dnode == NULL) return 0;
+    dnode->data = data;
+    dnode->prev = NULL;
+    if(dlist->head == NULL){
+        dlist->tail = dnode;
+        dnode->next = NULL;
+    } else {
+        dnode->next = dlist->head;
+    }
+    dlist->head = dnode;
+    return 1;
 }
 
 int addDTail(_DLINKED_LIST_ *dlist, void *data) {
