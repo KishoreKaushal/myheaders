@@ -173,7 +173,7 @@ void displayDLinkedList(const _DLINKED_LIST_ *dlist, DISPLAY display) {
     }
 }
 
-void DlistEmpty(const _DLINKED_LIST_ * dlist) {
+int DlistEmpty(const _DLINKED_LIST_ * dlist) {
     return (dlist->head == NULL);
 }
 

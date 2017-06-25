@@ -6,6 +6,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
+#include "assist.h"
 #include "dataStructures.h"
 
 /* --------------------- STACK --------------------- */
