@@ -137,6 +137,30 @@ void displayQueue(_QUEUE_ *, DISPLAY  );        /* Displays the whole queue */
 void destroyQueue(_QUEUE_ *);                   /* Destroy the whole queue */
 int queueEmpty(const _QUEUE_ *);                /* returns 1 if the queue is empty. */
 
-#endif // ASSIST_H
+/* ---------------- DOUBLY LINKED LIST ------------------ */
+
+typedef struct _DNODE_{
+    void *data;
+    struct _DNODE_ *next;
+    struct _DNODE_ *prev;
+} _DNODE_;
+
+typedef struct _DOUBLY_LINKED_LIST_{
+    _DNODE_ *head;
+    _DNODE_ *tail;
+    _DNODE_ *current;
+} _DLINKED_LIST_;
+
+
+void initializeDList(_DLINKED_LIST_*);                /* Initializes the doubly linked list */
+int addDHead(_DLINKED_LIST_*, void*);                 /* Adds data to the doubly linked lists's head */
+int addDTail(_DLINKED_LIST_*, void*);                 /* Adds data to the doubly linked list's tail */
+void removeDNode(_DLINKED_LIST_*, _DNODE_*);               /* Removes a node from the doubly linked list */
+_DNODE_ *getDNode(_DLINKED_LIST_*, COMPARE , void*);   /* Returns a pointer to the node containing a specific data item */
+void displayDLinkedList(_DLINKED_LIST_*, DISPLAY);    /* Displays the doubly linked list */
+
+
+
 
 /* ---------------- ----------------------- */
+#endif // ASSIST_H
